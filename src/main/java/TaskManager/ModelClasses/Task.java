@@ -337,8 +337,8 @@ public class Task implements Cloneable, Comparable<Task>, Serializable{
             result.controller.repeat = controller.repeat;
             return result;
         }
-        catch (Exception e){
-            throw new Error("By cloning Task object",e);
+        catch (CloneNotSupportedException e){
+            throw new RuntimeException("Error in cloning Task");
         }
     }
 
